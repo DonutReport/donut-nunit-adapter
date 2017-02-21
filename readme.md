@@ -14,6 +14,8 @@ java -jar target/donut-nunit-adapter-1.0-SNAPSHOT-jar-with-dependencies.jar
 -d <path_of_nunit_xml_report>
 -o <path_of_directory_to_store_JSON_files>
 ```
+### Output Location
+```
 If the output directory is specified,
 	 the JSON files are written in the folder `nunit-reports` in the specified directory
 else		 
@@ -21,6 +23,6 @@ else
 		 the JSON files are written in the folder `nunit-reports` in the current folder
 	else
      	 the JSON files are written in the folder `nunit-reports` in the target folder
-
+```
 
 
