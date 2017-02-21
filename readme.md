@@ -20,9 +20,9 @@ If the output directory is specified,
 	 the JSON files are written in the folder `nunit-reports` in the specified directory
 else		 
 	if you're executing the jar at the project level
-		 the JSON files are written in the folder `nunit-reports` in the current folder
+		 the JSON files are written in the folder `nunit-reports` in the target folder
 	else
-     	 the JSON files are written in the folder `nunit-reports` in the target folder
+		 the JSON files are written in the folder `nunit-reports` in the current folder     	 
 ```
 
 
