@@ -20,6 +20,9 @@ import java.util.List;
 
 public class NUnitAdapter {
 
+    public static final String PASSED = "passed";
+    public static final String FAILED = "failed";
+
     public List<Feature> transform(String absolutePath) throws Exception {
         return transform(extractDocument(absolutePath));
     }
@@ -101,9 +104,14 @@ public class NUnitAdapter {
 
     private List<Step> makeSteps(DeferredElementImpl testCaseElem, String testCaseName) throws Exception {
         Step step = new Step();
-
         long duration = (long) (Double.valueOf(testCaseElem.getAttribute("duration")) * 1000000);
-        step.setResult(new Result(makeStatus(testCaseElem.getAttribute("result")), duration, makeErrorMessage(testCaseElem)));
+        String status = makeStatus(testCaseElem.getAttribute("result"));
+
+        if (status.equals(PASSED)) {
+            step.setResult(new Result(PASSED, duration, null));
+        } else {
+            step.setResult(new Result(PASSED, duration, makeErrorMessage(testCaseElem)));
+        }
 
         //TODO: Need to see what happens if keyword is null
         step.setKeyword("Then");
@@ -128,10 +136,10 @@ public class NUnitAdapter {
 
     private String makeStatus(String result) throws Exception {
 
-        if (result.equalsIgnoreCase("failed"))
-            return "failed";
-        if (result.equalsIgnoreCase("passed"))
-            return "passed";
+        if (result.equalsIgnoreCase(FAILED))
+            return FAILED;
+        if (result.equalsIgnoreCase(PASSED))
+            return PASSED;
 
         throw new Exception("Unknown result value of: " + result);
     }
