@@ -2,6 +2,7 @@ package com.magentys.donut.adapters;
 
 import com.magentys.donut.gherkin.model.Element;
 import com.magentys.donut.gherkin.model.Feature;
+import com.magentys.donut.gherkin.model.Step;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,11 +60,12 @@ public class NUnitAdapterTest {
         List<Feature> features = nUnitAdapter.transform(document);
         List<Element> scenarios = features.get(0).getElements();
         Element scenario = scenarios.get(0);
+        Step step = scenario.getSteps().get(0);
 
         assertTrue(features.size() == 1);
         assertTrue(scenarios.size() == 2);
         assertTrue(scenario.getName().equals("Comparison"));
-        assertTrue(scenario.getSteps().get(0).getResult().getErrorMessage().contains("Error message:"));
-
+        assertTrue(step.getResult().getErrorMessage().contains("Error message:"));
+        assertTrue(step.getResult().getStatus().equals("failed"));
     }
 }

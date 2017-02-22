@@ -110,7 +110,7 @@ public class NUnitAdapter {
         if (status.equals(PASSED)) {
             step.setResult(new Result(PASSED, duration, null));
         } else {
-            step.setResult(new Result(PASSED, duration, makeErrorMessage(testCaseElem)));
+            step.setResult(new Result(FAILED, duration, makeErrorMessage(testCaseElem)));
         }
 
         //TODO: Need to see what happens if keyword is null
