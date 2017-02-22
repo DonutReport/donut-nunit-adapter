@@ -103,7 +103,7 @@ public class NUnitAdapter {
         Step step = new Step();
 
         long duration = (long) (Double.valueOf(testCaseElem.getAttribute("duration")) * 1000000);
-        step.setResult(new Result(makeStatus(testCaseElem.getAttribute("result")), duration));
+        step.setResult(new Result(makeStatus(testCaseElem.getAttribute("result")), duration, makeErrorMessage(testCaseElem)));
 
         //TODO: Need to see what happens if keyword is null
         step.setKeyword("Then");
@@ -112,6 +112,18 @@ public class NUnitAdapter {
         step.setMatch(new Match(testCaseElem.getAttribute("fullname")));
 
         return Collections.singletonList(step);
+    }
+
+    private String makeErrorMessage(DeferredElementImpl testCaseElem) {
+        try {
+            Node failureNode = getNodeByTagName(testCaseElem.getChildNodes(), "failure");
+            Node messageNode = getNodeByTagName(failureNode.getChildNodes(), "message");
+            Node stackTraceNode = getNodeByTagName(failureNode.getChildNodes(), "stack-trace");
+
+            return "Error message: " + StringUtils.normalizeSpace(messageNode.getTextContent()) + " Stack trace: " + StringUtils.normalizeSpace(stackTraceNode.getTextContent());
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     private String makeStatus(String result) throws Exception {

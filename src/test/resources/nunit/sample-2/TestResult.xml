@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="32" result="Failed" total="32" passed="31" failed="1" inconclusive="0" skipped="0" asserts="321" engine-version="3.6.0.0" clr-version="4.0.30319.42000" start-time="2017-02-22 03:48:25Z" end-time="2017-02-22 03:48:28Z" duration="2.387964">
+    <command-line><![CDATA[nunit3-console.exe  C:\Work\nunit-csharp-samples-master\nunit-csharp-samples-master\syntax\bin\Debug\cs-syntax.dll --result C:\Work\TestResult.xml]]></command-line>
+    <test-suite type="Assembly" id="0-1033" name="cs-syntax.dll" fullname="C:\Work\nunit-csharp-samples-master\nunit-csharp-samples-master\syntax\bin\Debug\cs-syntax.dll" runstate="Runnable" testcasecount="32" result="Failed" site="Child" start-time="2017-02-22 03:48:27Z" end-time="2017-02-22 03:48:27Z" duration="0.553081" total="32" passed="31" failed="1" inconclusive="0" skipped="0" asserts="321">
+        <environment framework-version="3.4.1.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.14393.0" platform="Win32NT" cwd="C:\Work\NUnit.Console-3.6.0" machine-name="EC2AMAZ-5S3JFGF" user="Administrator" user-domain="EC2AMAZ-5S3JFGF" culture="en-US" uiculture="en-US" os-architecture="x64" />
+        <settings>
+            <setting name="DisposeRunners" value="True" />
+            <setting name="WorkDirectory" value="C:\Work\NUnit.Console-3.6.0" />
+            <setting name="ImageRuntimeVersion" value="4.0.30319" />
+            <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.5.2" />
+            <setting name="ImageRequiresX86" value="False" />
+            <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+            <setting name="NumberOfTestWorkers" value="2" />
+        </settings>
+        <properties>
+            <property name="_PID" value="4828" />
+            <property name="_APPDOMAIN" value="domain-" />
+        </properties>
+        <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="0-1034" name="NUnit" fullname="NUnit" runstate="Runnable" testcasecount="32" result="Failed" site="Child" start-time="2017-02-22 03:48:27Z" end-time="2017-02-22 03:48:27Z" duration="0.529926" total="32" passed="31" failed="1" inconclusive="0" skipped="0" asserts="321">
+            <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestSuite" id="0-1035" name="Framework" fullname="NUnit.Framework" runstate="Runnable" testcasecount="32" result="Failed" site="Child" start-time="2017-02-22 03:48:27Z" end-time="2017-02-22 03:48:27Z" duration="0.526005" total="32" passed="31" failed="1" inconclusive="0" skipped="0" asserts="321">
+                <failure>
+                    <message><![CDATA[One or more child tests had errors]]></message>
+                </failure>
+                <test-suite type="TestSuite" id="0-1036" name="Tests" fullname="NUnit.Framework.Tests" runstate="Runnable" testcasecount="32" result="Failed" site="Child" start-time="2017-02-22 03:48:27Z" end-time="2017-02-22 03:48:27Z" duration="0.521424" total="32" passed="31" failed="1" inconclusive="0" skipped="0" asserts="321">
+                    <failure>
+                        <message><![CDATA[One or more child tests had errors]]></message>
+                    </failure>
+                    <test-suite type="TestFixture" id="0-1000" name="AssertSyntaxTests" fullname="NUnit.Framework.Tests.AssertSyntaxTests" classname="NUnit.Framework.Tests.AssertSyntaxTests" runstate="Runnable" testcasecount="32" result="Failed" site="Child" start-time="2017-02-22 03:48:27Z" end-time="2017-02-22 03:48:27Z" duration="0.511129" total="32" passed="31" failed="1" inconclusive="0" skipped="0" asserts="321">
+                        <properties>
+                            <property name="Feature" value="Test Syntax" />
+                        </properties>
+                        <failure>
+                            <message><![CDATA[One or more child tests had errors]]></message>
+                        </failure>
+                        <test-case id="0-1020" name="ComparisonTests" fullname="NUnit.Framework.Tests.AssertSyntaxTests.ComparisonTests" methodname="ComparisonTests" classname="NUnit.Framework.Tests.AssertSyntaxTests" runstate="Runnable" seed="1825752900" result="Failed" start-time="2017-02-22 03:48:27Z" end-time="2017-02-22 03:48:27Z" duration="0.156705" asserts="1">
+                            <properties>
+                                <property name="Name" value="Comparison" />
+                                <property name="Description" value="Lot of comparison tests" />
+                            </properties>
+                            <failure>
+                                <message><![CDATA[  Expected: greater than 7
+  But was:  3
+]]></message>
+                                <stack-trace><![CDATA[at NUnit.Framework.Tests.AssertSyntaxTests.ComparisonTests() in C:\Work\nunit-csharp-samples-master\nunit-csharp-samples-master\syntax\AssertSyntaxTests.cs:line 424
+]]></stack-trace>
+                            </failure>
+                        </test-case>
+                        <test-case id="0-1032" name="ComplexTests" fullname="NUnit.Framework.Tests.AssertSyntaxTests.ComplexTests" methodname="ComplexTests" classname="NUnit.Framework.Tests.AssertSyntaxTests" runstate="Runnable" seed="455451397" result="Passed" start-time="2017-02-22 03:48:27Z" end-time="2017-02-22 03:48:27Z" duration="0.001425" asserts="4" />
+                    </test-suite>
+                </test-suite>
+            </test-suite>
+        </test-suite>
+    </test-suite>
+</test-run>

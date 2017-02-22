@@ -9,13 +9,20 @@ public class Result {
     @SerializedName("duration")
     @Expose
     private Long duration;
+
     @SerializedName("status")
     @Expose
     private String status;
 
-    public Result(String status, long duration) {
+    @SerializedName("error_message")
+    @Expose
+    private String errorMessage;
+
+
+    public Result(String status, long duration,String errorMessage) {
         this.status = status;
         this.duration = duration;
+        this.errorMessage = errorMessage;
     }
 
     public Long getDuration() {
@@ -34,4 +41,11 @@ public class Result {
         this.status = status;
     }
 
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
 }
