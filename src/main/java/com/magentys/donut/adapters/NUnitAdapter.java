@@ -29,7 +29,7 @@ public class NUnitAdapter {
     }
 
 
-    File readXml(String absolutePath) throws IOException {
+    File readXml(String absolutePath) {
         return new File(absolutePath);
     }
 
@@ -48,9 +48,9 @@ public class NUnitAdapter {
     }
 
     List<Feature> transform(Document document) throws Exception {
-        List<Feature> features = new ArrayList<>();
         List<Node> testFixtures = extractTestFixtures(document);
 
+        List<Feature> features = new ArrayList<>();
         for (Node fixture : testFixtures) {
             features.add(makeFeature(fixture));
         }
@@ -58,13 +58,17 @@ public class NUnitAdapter {
     }
 
     List<Node> extractTestFixtures(Document document) throws Exception {
+        return getNodes(document, "//test-suite[@type=\"TestFixture\"]","test-suite");
+    }
 
+    List<Node> getNodes(Document document, String xpathString,String tagName) throws Exception {
         XPathFactory xPathfactory = XPathFactory.newInstance();
         XPath xpath = xPathfactory.newXPath();
-        XPathExpression expr = null;
-        expr = xpath.compile("//test-suite[@type=\"TestFixture\"]");
 
-        return getNodesByTagName((NodeList) expr.evaluate(document, XPathConstants.NODESET), "test-suite");
+        XPathExpression expr;
+        expr = xpath.compile(xpathString);
+
+        return getNodesByTagName((NodeList) expr.evaluate(document, XPathConstants.NODESET), tagName);
     }
 
     private Feature makeFeature(Node fixture) throws Exception {
@@ -82,13 +86,13 @@ public class NUnitAdapter {
         return feature;
     }
 
-    private List<com.magentys.donut.gherkin.model.Element> makeElements(List<Node> testCases) throws Exception {
+    List<com.magentys.donut.gherkin.model.Element> makeElements(List<Node> testCases) throws Exception {
         List<com.magentys.donut.gherkin.model.Element> elements = new ArrayList<>();
 
         for (Node testCase : testCases) {
             com.magentys.donut.gherkin.model.Element element = new com.magentys.donut.gherkin.model.Element();
 
-            String testCaseName = getProperty(testCase, "Name", "Please provide a test case name.");
+            String testCaseName = getProperty(testCase, "Name", ((DeferredElementImpl) testCase).getAttribute("name"));
             element.setName(testCaseName);
             element.setDescription(getProperty(testCase, "Description", ""));
             element.setLine((int) (Math.random() * 1000));
@@ -119,7 +123,6 @@ public class NUnitAdapter {
             step.setResult(new Result(FAILED, duration, makeErrorMessage(testCaseElem)));
         }
 
-        //TODO: Need to see what happens if keyword is null
         step.setKeyword("");
         step.setLine((int) (Math.random() * 1000));
         step.setName(testCaseName);

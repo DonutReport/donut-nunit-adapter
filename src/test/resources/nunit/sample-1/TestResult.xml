@@ -23,12 +23,7 @@
             <properties>
               <property name="Feature" value="Test Syntax" />
             </properties>
-            <test-case id="0-1020" name="ComparisonTests" fullname="NUnit.Framework.Tests.AssertSyntaxTests.ComparisonTests" methodname="ComparisonTests" classname="NUnit.Framework.Tests.AssertSyntaxTests" runstate="Runnable" seed="835982851" result="Passed" start-time="2017-02-16 04:09:35Z" end-time="2017-02-16 04:09:35Z" duration="0.003187" asserts="26">
-              <properties>
-                <property name="Name" value="Comparison" />
-                <property name="Description" value="Lot of comparison tests" />
-              </properties>
-            </test-case>
+            <test-case id="0-1020" name="ComparisonTests" fullname="NUnit.Framework.Tests.AssertSyntaxTests.ComparisonTests" methodname="ComparisonTests" classname="NUnit.Framework.Tests.AssertSyntaxTests" runstate="Runnable" seed="835982851" result="Passed" start-time="2017-02-16 04:09:35Z" end-time="2017-02-16 04:09:35Z" duration="0.003187" asserts="26"></test-case>
             <test-case id="0-1032" name="ComplexTests" fullname="NUnit.Framework.Tests.AssertSyntaxTests.ComplexTests" methodname="ComplexTests" classname="NUnit.Framework.Tests.AssertSyntaxTests" runstate="Runnable" seed="1491258637" result="Passed" start-time="2017-02-16 04:09:35Z" end-time="2017-02-16 04:09:35Z" duration="0.001294" asserts="4" />
           </test-suite>
         </test-suite>
