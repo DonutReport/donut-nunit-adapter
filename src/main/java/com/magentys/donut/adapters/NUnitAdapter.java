@@ -12,6 +12,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,8 +21,8 @@ import java.util.List;
 
 public class NUnitAdapter {
 
-    public static final String PASSED = "passed";
-    public static final String FAILED = "failed";
+    private static final String PASSED = "passed";
+    private static final String FAILED = "failed";
 
     public List<Feature> transform(String absolutePath) throws Exception {
         return transform(extractDocument(absolutePath));
@@ -32,7 +33,7 @@ public class NUnitAdapter {
         return new File(absolutePath);
     }
 
-    public Document extractDocument(String absolutePath) throws ParserConfigurationException, IOException, SAXException {
+    Document extractDocument(String absolutePath) throws ParserConfigurationException, IOException, SAXException {
 
         //Get the DOM Builder Factory
         DocumentBuilderFactory factory =
@@ -43,22 +44,27 @@ public class NUnitAdapter {
 
         //Load and Parse the XML document
         //document contains the complete XML as a Tree.
-
         return builder.parse(readXml(absolutePath));
     }
 
     List<Feature> transform(Document document) throws Exception {
         List<Feature> features = new ArrayList<>();
-
-        //Iterating through the nodes and extracting the data.
-        NodeList nodeList = document.getDocumentElement().getChildNodes();
-        Node testSuiteNode = getNodeByTagName(nodeList, "test-suite");
-        List<Node> testFixtures = getTextFixtureNodes(testSuiteNode);
+        List<Node> testFixtures = extractTestFixtures(document);
 
         for (Node fixture : testFixtures) {
             features.add(makeFeature(fixture));
         }
         return features;
+    }
+
+    List<Node> extractTestFixtures(Document document) throws Exception {
+
+        XPathFactory xPathfactory = XPathFactory.newInstance();
+        XPath xpath = xPathfactory.newXPath();
+        XPathExpression expr = null;
+        expr = xpath.compile("//test-suite[@type=\"TestFixture\"]");
+
+        return getNodesByTagName((NodeList) expr.evaluate(document, XPathConstants.NODESET), "test-suite");
     }
 
     private Feature makeFeature(Node fixture) throws Exception {
@@ -114,7 +120,7 @@ public class NUnitAdapter {
         }
 
         //TODO: Need to see what happens if keyword is null
-        step.setKeyword("Then");
+        step.setKeyword("");
         step.setLine((int) (Math.random() * 1000));
         step.setName(testCaseName);
         step.setMatch(new Match(testCaseElem.getAttribute("fullname")));
@@ -158,36 +164,6 @@ public class NUnitAdapter {
             // Ignore
         }
         return defaultValue;
-    }
-
-    private List<Node> getTextFixtureNodes(Node testSuiteNode) throws Exception {
-
-        //  Get the first Test Fixture node
-        while (!((DeferredElementImpl) testSuiteNode).getAttribute("type").equals("TestFixture")) {
-
-            NodeList childNodes = testSuiteNode.getChildNodes();
-            testSuiteNode = getNodeByTagName(childNodes, "test-suite");
-
-        }
-        // Get all TestFixtures
-        return getAllTestFixtures(testSuiteNode.getParentNode());
-    }
-
-    private List<Node> getAllTestFixtures(Node testFixtureParent) {
-
-        List<Node> testFixtures = new ArrayList<>();
-
-
-        NodeList childNodes = testFixtureParent.getChildNodes();
-
-        for (int i = 0; i < childNodes.getLength(); i++) {
-
-            Node node = childNodes.item(i);
-            if (node instanceof Element && ((Element) node).getAttribute("type").equals("TestFixture")) {
-                testFixtures.add(node);
-            }
-        }
-        return testFixtures;
     }
 
     private Node getNodeByTagName(NodeList nodeList, String tagName) throws Exception {

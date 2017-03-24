@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="5" result="Passed" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="46" engine-version="3.6.1.0" clr-version="4.0.30319.42000" start-time="2017-03-23 03:08:31Z" end-time="2017-03-23 03:08:32Z" duration="0.926896">
+  <command-line><![CDATA[nunit3-console.exe  D:\b2cpcm\b2c-pcm\Implementation\DotNet\Raci.B2C\Raci.B2C.Web.Test.Unit\bin\Debug\Raci.B2C.Web.Test.Unit.dll --result D:\b2cpcm\b2c-pcm\Implementation\DotNet\Raci.B2C\Raci.B2C.Web.Test.Unit\bin\Debug\nunit\Raci.B2C.Web.Test.Unit.dll.nunit.xml]]></command-line>
+  <test-suite type="Assembly" id="0-1007" name="Raci.B2C.Web.Test.Unit.dll" fullname="D:\b2cpcm\b2c-pcm\Implementation\DotNet\Raci.B2C\Raci.B2C.Web.Test.Unit\bin\Debug\Raci.B2C.Web.Test.Unit.dll" runstate="Runnable" testcasecount="5" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.128385" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="46">
+    <environment framework-version="3.6.1.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\apps\nunit-console\nunit-console" machine-name="RAC-39641" user="bridge0a" user-domain="RAC" culture="en-AU" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="D:\apps\nunit-console\nunit-console" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.5" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="8" />
+    </settings>
+    <properties>
+      <property name="_PID" value="7952" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <test-suite type="TestSuite" id="0-1008" name="Raci" fullname="Raci" runstate="Runnable" testcasecount="5" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.111468" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="46">
+      <test-suite type="TestSuite" id="0-1009" name="B2C" fullname="Raci.B2C" runstate="Runnable" testcasecount="5" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.108005" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="46">
+        <test-suite type="TestSuite" id="0-1010" name="Web" fullname="Raci.B2C.Web" runstate="Runnable" testcasecount="5" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.106020" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="46">
+          <test-suite type="TestSuite" id="0-1011" name="Test" fullname="Raci.B2C.Web.Test" runstate="Runnable" testcasecount="5" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.103982" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="46">
+            <test-suite type="TestSuite" id="0-1012" name="Unit" fullname="Raci.B2C.Web.Test.Unit" runstate="Runnable" testcasecount="5" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.101891" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="46">
+              <test-suite type="TestSuite" id="0-1013" name="Areas" fullname="Raci.B2C.Web.Test.Unit.Areas" runstate="Runnable" testcasecount="5" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.099976" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="46">
+                <test-suite type="TestSuite" id="0-1014" name="Quote" fullname="Raci.B2C.Web.Test.Unit.Areas.Quote" runstate="Runnable" testcasecount="2" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.076263" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="42">
+                  <test-suite type="TestSuite" id="0-1015" name="FormHandlers" fullname="Raci.B2C.Web.Test.Unit.Areas.Quote.FormHandlers" runstate="Runnable" testcasecount="2" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.074964" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="42">
+                    <test-suite type="TestSuite" id="0-1016" name="Mapping" fullname="Raci.B2C.Web.Test.Unit.Areas.Quote.FormHandlers.Mapping" runstate="Runnable" testcasecount="2" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.073531" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="42">
+                      <test-suite type="TestFixture" id="0-1000" name="QuotePolicyContactMappingTests" fullname="Raci.B2C.Web.Test.Unit.Areas.Quote.FormHandlers.Mapping.QuotePolicyContactMappingTests" classname="Raci.B2C.Web.Test.Unit.Areas.Quote.FormHandlers.Mapping.QuotePolicyContactMappingTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.067012" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="42">
+                        <properties>
+                          <property name="Feature" value="Retrieve Quote" />
+                        </properties>
+                        <test-case id="0-1001" name="QuotePolicyContactMapping_WithB2CPrefix_ShouldMapValuesCorrectly" fullname="Raci.B2C.Web.Test.Unit.Areas.Quote.FormHandlers.Mapping.QuotePolicyContactMappingTests.QuotePolicyContactMapping_WithB2CPrefix_ShouldMapValuesCorrectly" methodname="QuotePolicyContactMapping_WithB2CPrefix_ShouldMapValuesCorrectly" classname="Raci.B2C.Web.Test.Unit.Areas.Quote.FormHandlers.Mapping.QuotePolicyContactMappingTests" runstate="Runnable" seed="792105739" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.053650" asserts="21">
+                          <properties>
+                            <property name="Name" value="Map a QuotePolicyContact with _B2C_ prefix to a Contact" />
+                          </properties>
+                        </test-case>
+                        <test-case id="0-1002" name="QuotePolicyContactMapping_WithoutB2CPrefix_ShouldMapValuesCorrectly" fullname="Raci.B2C.Web.Test.Unit.Areas.Quote.FormHandlers.Mapping.QuotePolicyContactMappingTests.QuotePolicyContactMapping_WithoutB2CPrefix_ShouldMapValuesCorrectly" methodname="QuotePolicyContactMapping_WithoutB2CPrefix_ShouldMapValuesCorrectly" classname="Raci.B2C.Web.Test.Unit.Areas.Quote.FormHandlers.Mapping.QuotePolicyContactMappingTests" runstate="Runnable" seed="78154548" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.001146" asserts="21">
+                          <properties>
+                            <property name="Name" value="Map a QuotePolicyContact without _B2C_ prefix to a Contact" />
+                          </properties>
+                        </test-case>
+                      </test-suite>
+                      <test-suite type="TestFixture" id="0-1003" name="DiscountMappingTests" fullname="Raci.B2C.Web.Test.Unit.Areas.QuoteMotor.FormHandlers.Mapping.DiscountMappingTests" classname="Raci.B2C.Web.Test.Unit.Areas.QuoteMotor.FormHandlers.Mapping.DiscountMappingTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.015005" total="3" passed="3" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="4">
+                        <test-case id="0-1004" name="ToQuoteDiscounts_MultipleDiscountIVO_DescriptionsMappedCorrectly" fullname="Raci.B2C.Web.Test.Unit.Areas.QuoteMotor.FormHandlers.Mapping.DiscountMappingTests.ToQuoteDiscounts_MultipleDiscountIVO_DescriptionsMappedCorrectly" methodname="ToQuoteDiscounts_MultipleDiscountIVO_DescriptionsMappedCorrectly" classname="Raci.B2C.Web.Test.Unit.Areas.QuoteMotor.FormHandlers.Mapping.DiscountMappingTests" runstate="Runnable" seed="960402160" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.009392" asserts="2" />
+                        <test-case id="0-1005" name="ToQuoteDiscounts_MultipleDiscountIVO_PercentValueMappedCorrectly" fullname="Raci.B2C.Web.Test.Unit.Areas.QuoteMotor.FormHandlers.Mapping.DiscountMappingTests.ToQuoteDiscounts_MultipleDiscountIVO_PercentValueMappedCorrectly" methodname="ToQuoteDiscounts_MultipleDiscountIVO_PercentValueMappedCorrectly" classname="Raci.B2C.Web.Test.Unit.Areas.QuoteMotor.FormHandlers.Mapping.DiscountMappingTests" runstate="Runnable" seed="1182817743" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.000454" asserts="1" />
+                        <test-case id="0-1006" name="ToQuoteDiscounts_MultipleDiscountIVO_ValueMappedCorrectly" fullname="Raci.B2C.Web.Test.Unit.Areas.QuoteMotor.FormHandlers.Mapping.DiscountMappingTests.ToQuoteDiscounts_MultipleDiscountIVO_ValueMappedCorrectly" methodname="ToQuoteDiscounts_MultipleDiscountIVO_ValueMappedCorrectly" classname="Raci.B2C.Web.Test.Unit.Areas.QuoteMotor.FormHandlers.Mapping.DiscountMappingTests" runstate="Runnable" seed="1117301821" result="Passed" start-time="2017-03-23 03:08:32Z" end-time="2017-03-23 03:08:32Z" duration="0.000435" asserts="1" />
+                      </test-suite>
+                    </test-suite>
+                  </test-suite>
+                </test-suite>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
