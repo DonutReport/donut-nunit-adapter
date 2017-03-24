@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="5" result="Passed" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="5" engine-version="3.6.0.0" clr-version="4.0.30319.42000" start-time="2017-03-23 07:20:10Z" end-time="2017-03-23 07:20:12Z" duration="1.478798">
+  <command-line><![CDATA[nunit3-console.exe  C:\Work\CalculatorSpecFlowProject\Shouty.Tests\bin\Debug\Shouty.Tests.dll C:\Work\CalculatorSpecFlowProject\Shouty.Temp.Tests\bin\Debug\Shouty.Temp.Tests.dll --result C:\Work\ShoutyTests.xml]]></command-line>
+  <test-suite type="Assembly" id="1-1005" name="Shouty.Tests.dll" fullname="C:\Work\CalculatorSpecFlowProject\Shouty.Tests\bin\Debug\Shouty.Tests.dll" runstate="Runnable" testcasecount="4" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.225518" total="4" passed="4" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="4">
+    <environment framework-version="3.6.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.14393.0" platform="Win32NT" cwd="C:\Work\NUnit.Console-3.6.0" machine-name="EC2AMAZ-5S3JFGF" user="Administrator" user-domain="EC2AMAZ-5S3JFGF" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="C:\Work\NUnit.Console-3.6.0" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.5.1" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="2" />
+    </settings>
+    <properties>
+      <property name="_PID" value="1896" />
+      <property name="_APPDOMAIN" value="domain-680a1841-Shouty.Tests.dll" />
+    </properties>
+    <test-suite type="TestSuite" id="1-1006" name="Shouty" fullname="Shouty" runstate="Runnable" testcasecount="4" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.187765" total="4" passed="4" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="4">
+      <test-suite type="TestSuite" id="1-1007" name="Tests" fullname="Shouty.Tests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.161789" total="4" passed="4" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="4">
+        <test-suite type="TestFixture" id="1-1000" name="CoordinateTest" fullname="Shouty.Tests.CoordinateTest" classname="Shouty.Tests.CoordinateTest" runstate="Runnable" testcasecount="4" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.135500" total="4" passed="4" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="4">
+          <properties>
+            <property name="Feature" value="Hear Shout" />
+          </properties>
+          <test-case id="1-1001" name="ItCalculatesTheDistanceFromAnotherCoordinateAlongXAxis" fullname="Shouty.Tests.CoordinateTest.ItCalculatesTheDistanceFromAnotherCoordinateAlongXAxis" methodname="ItCalculatesTheDistanceFromAnotherCoordinateAlongXAxis" classname="Shouty.Tests.CoordinateTest" runstate="Runnable" seed="1876444452" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.020313" asserts="1">
+            <properties>
+              <property name="Name" value="Distance calculation from another coordinate along X axis" />
+              <property name="Description" value="Provide description if required" />
+            </properties>
+          </test-case>
+          <test-case id="1-1003" name="ItCalculatesTheDistanceFromAnotherCoordinateAlongYAxis" fullname="Shouty.Tests.CoordinateTest.ItCalculatesTheDistanceFromAnotherCoordinateAlongYAxis" methodname="ItCalculatesTheDistanceFromAnotherCoordinateAlongYAxis" classname="Shouty.Tests.CoordinateTest" runstate="Runnable" seed="752800425" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.000283" asserts="1">
+            <properties>
+              <property name="Name" value="Distance calculation from another coordinate along Y axis" />
+              <property name="Description" value="Provide description if required" />
+            </properties>
+          </test-case>
+          <test-case id="1-1004" name="ItCalculatesTheDistanceFromAnotherCoordinateNotOnTheAxes" fullname="Shouty.Tests.CoordinateTest.ItCalculatesTheDistanceFromAnotherCoordinateNotOnTheAxes" methodname="ItCalculatesTheDistanceFromAnotherCoordinateNotOnTheAxes" classname="Shouty.Tests.CoordinateTest" runstate="Runnable" seed="1295435124" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.000251" asserts="1">
+            <properties>
+              <property name="Name" value="Distance calculation between two coordinates not on the axes" />
+              <property name="Description" value="Provide description if required" />
+            </properties>
+          </test-case>
+          <test-case id="1-1002" name="ItShouldReturnZeroWhenBothCoordinatesAreSame" fullname="Shouty.Tests.CoordinateTest.ItShouldReturnZeroWhenBothCoordinatesAreSame" methodname="ItShouldReturnZeroWhenBothCoordinatesAreSame" classname="Shouty.Tests.CoordinateTest" runstate="Runnable" seed="249021002" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.000524" asserts="1">
+            <properties>
+              <property name="Name" value="Both coordinates are same, so distance should be 0" />
+              <property name="Description" value="Provide description if required" />
+            </properties>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+  <test-suite type="Assembly" id="2-1002" name="Shouty.Temp.Tests.dll" fullname="C:\Work\CalculatorSpecFlowProject\Shouty.Temp.Tests\bin\Debug\Shouty.Temp.Tests.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.166773" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+    <environment framework-version="3.6.1.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.14393.0" platform="Win32NT" cwd="C:\Work\NUnit.Console-3.6.0" machine-name="EC2AMAZ-5S3JFGF" user="Administrator" user-domain="EC2AMAZ-5S3JFGF" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="C:\Work\NUnit.Console-3.6.0" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.5.2" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="2" />
+    </settings>
+    <properties>
+      <property name="_PID" value="4204" />
+      <property name="_APPDOMAIN" value="domain-c16e02c3-Shouty.Temp.Tests.dll" />
+    </properties>
+    <test-suite type="TestSuite" id="2-1003" name="Shouty" fullname="Shouty" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.135062" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+      <test-suite type="TestSuite" id="2-1004" name="Temp" fullname="Shouty.Temp" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.125783" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+        <test-suite type="TestSuite" id="2-1005" name="Tests" fullname="Shouty.Temp.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.093054" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+          <test-suite type="TestFixture" id="2-1000" name="UnitTest1" fullname="Shouty.Temp.Tests.UnitTest1" classname="Shouty.Temp.Tests.UnitTest1" runstate="Runnable" testcasecount="1" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.076030" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+            <properties>
+              <property name="Feature" value="Hear Shout" />
+            </properties>
+            <test-case id="2-1001" name="DummyTest" fullname="Shouty.Temp.Tests.UnitTest1.DummyTest" methodname="DummyTest" classname="Shouty.Temp.Tests.UnitTest1" runstate="Runnable" seed="424758428" result="Passed" start-time="2017-03-23 07:20:12Z" end-time="2017-03-23 07:20:12Z" duration="0.022500" asserts="1">
+              <properties>
+                <property name="Name" value="Dummy test" />
+                <property name="Description" value="Dummy test" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
