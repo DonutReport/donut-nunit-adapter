@@ -18,10 +18,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -133,6 +130,22 @@ public class NUnitAdapterTest {
 
         System.out.println(testFixtures.size());
         assertTrue(testFixtures.size() == 2);
+    }
+
+    @Test
+    public void shouldMakeElementsWithPredefinedValues() throws Exception {
+        Node testCase = buildTestCase();
+        String name = ((DeferredElementImpl) testCase).getAttribute("name");
+        assertNotNull(name);
+
+        List<Node> testCaseNodes = Collections.singletonList(testCase);
+        List<Element> elements = nUnitAdapter.makeElements(testCaseNodes);
+
+        assertTrue(elements.size() == 1);
+        Element element = elements.get(0);
+        assertTrue(name.equals(element.getName()));
+        assertTrue(NUnitAdapter.UNIT_TEST_KEYWORD.equals(element.getKeyword()));
+        assertTrue(NUnitAdapter.UNIT_TEST_TYPE.equals(element.getType()));
     }
 
     @Test

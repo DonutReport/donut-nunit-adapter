@@ -23,6 +23,8 @@ public class NUnitAdapter {
 
     private static final String PASSED = "passed";
     private static final String FAILED = "failed";
+    public static final String UNIT_TEST_TYPE = "unit-test";
+    public static final String UNIT_TEST_KEYWORD = "Unit Test";
 
     public List<Feature> transform(String absolutePath) throws Exception {
         return transform(extractDocument(absolutePath));
@@ -96,12 +98,12 @@ public class NUnitAdapter {
             element.setName(testCaseName);
             element.setDescription(getProperty(testCase, "Description", ""));
             element.setLine((int) (Math.random() * 1000));
-            element.setKeyword("Unit Test");
+            element.setKeyword(UNIT_TEST_KEYWORD);
 
             DeferredElementImpl testCaseElem = (DeferredElementImpl) testCase;
             element.setId(testCaseElem.getAttribute("id"));
             element.setSteps(makeSteps(testCaseElem, testCaseName));
-            element.setType("unit-test");
+            element.setType(UNIT_TEST_TYPE);
 
             elements.add(element);
         }
