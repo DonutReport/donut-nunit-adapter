@@ -5,19 +5,20 @@ import com.magentys.donut.gherkin.model.Feature;
 import com.magentys.donut.gherkin.model.Step;
 import com.sun.org.apache.xerces.internal.dom.DeferredElementImpl;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -29,6 +30,8 @@ public class NUnitAdapterTest {
     private final String sample3Path = FileUtils.toFile(NUnitAdapterTest.class.getResource("/nunit/sample-3/TestResult.xml")).getAbsolutePath();
     private final String sample4Path = FileUtils.toFile(NUnitAdapterTest.class.getResource("/nunit/sample-4/TestResult.xml")).getAbsolutePath();
     private final String sample5Path = FileUtils.toFile(NUnitAdapterTest.class.getResource("/nunit/sample-5/TestResult.xml")).getAbsolutePath();
+    private final String sample6Path = FileUtils.toFile(NUnitAdapterTest.class.getResource("/nunit/sample-6/TestResult.xml")).getAbsolutePath();
+
 
     @Before
     public void setUp() {
@@ -76,6 +79,18 @@ public class NUnitAdapterTest {
         assertTrue(step.getResult().getStatus().equals("failed"));
     }
 
+    @Test
+    public void shouldThrowAnExceptionWhenATestFixtureHasNoTestCases() throws Exception {
+        Document document = nUnitAdapter.extractDocument(sample6Path);
+
+        try {
+            nUnitAdapter.transform(document);
+            fail("Exception wasn't thrown.");
+        } catch (Exception e) {
+            assertTrue(e.getMessage().contains("There are no elements in the node with id:"));
+        }
+    }
+
     // Units
     @Test
     public void shouldBeAbleToReadTheXmlFileUsingAnAbsolutePath() throws IOException {
@@ -118,6 +133,22 @@ public class NUnitAdapterTest {
     }
 
     @Test
+    public void shouldMakeElementsWithPredefinedValues() throws Exception {
+        Node testCase = buildTestCase();
+        String name = ((DeferredElementImpl) testCase).getAttribute("name");
+        assertNotNull(name);
+
+        List<Node> testCaseNodes = Collections.singletonList(testCase);
+        List<Element> elements = nUnitAdapter.makeElements(testCaseNodes);
+
+        assertTrue(elements.size() == 1);
+        Element element = elements.get(0);
+        assertTrue(name.equals(element.getName()));
+        assertTrue(NUnitAdapter.UNIT_TEST_KEYWORD.equals(element.getKeyword()));
+        assertTrue(NUnitAdapter.UNIT_TEST_TYPE.equals(element.getType()));
+    }
+
+    @Test
     public void shouldMakeElementsWithNameAttributeAsDefaultWhenNamePropertyIsNotSpecified() throws Exception {
 
         //Assumption: This testCase doesn't have properties
@@ -153,6 +184,30 @@ public class NUnitAdapterTest {
         assert (elements.size() == 1);
         Element element = elements.get(0);
         assert (element.getName().equals(nameValue));
+    }
+
+    @Test
+    public void shouldThrowAnExceptionIfRequestedTagIsNotFound() throws Exception {
+        List<Node> testFixtures = nUnitAdapter.extractTestFixtures(nUnitAdapter.extractDocument(sample1Path));
+        NodeList nodeList = new NodeList() {
+            @Override
+            public Node item(int index) {
+                return testFixtures.get(0);
+            }
+
+            @Override
+            public int getLength() {
+                return 1;
+            }
+        };
+
+        String tagName = RandomStringUtils.random(5);
+        try {
+            nUnitAdapter.getNodesByTagName(nodeList, tagName);
+            fail("No exception was thrown");
+        } catch (Exception e) {
+            assertTrue(e.getMessage().equals("Element with tag name: " + tagName + " not found."));
+        }
     }
 
     private void appendPropertiesNode(Node testCase, List<Map<String, String>> properties) {

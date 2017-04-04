@@ -23,6 +23,8 @@ public class NUnitAdapter {
 
     private static final String PASSED = "passed";
     private static final String FAILED = "failed";
+    public static final String UNIT_TEST_TYPE = "unit-test";
+    public static final String UNIT_TEST_KEYWORD = "Unit Test";
 
     public List<Feature> transform(String absolutePath) throws Exception {
         return transform(extractDocument(absolutePath));
@@ -96,12 +98,12 @@ public class NUnitAdapter {
             element.setName(testCaseName);
             element.setDescription(getProperty(testCase, "Description", ""));
             element.setLine((int) (Math.random() * 1000));
-            element.setKeyword("Unit Test");
+            element.setKeyword(UNIT_TEST_KEYWORD);
 
             DeferredElementImpl testCaseElem = (DeferredElementImpl) testCase;
             element.setId(testCaseElem.getAttribute("id"));
             element.setSteps(makeSteps(testCaseElem, testCaseName));
-            element.setType("unit-Test");
+            element.setType(UNIT_TEST_TYPE);
 
             elements.add(element);
         }
@@ -173,8 +175,12 @@ public class NUnitAdapter {
         return getNodesByTagName(nodeList, tagName).get(0);
     }
 
-    private List<Node> getNodesByTagName(NodeList nodeList, String tagName) throws Exception {
+    List<Node> getNodesByTagName(NodeList nodeList, String tagName) throws Exception {
         List<Node> nodes = new ArrayList<>();
+
+        if(nodeList.getLength() == 0){
+            throw new Exception("There are no elements in the node with id: " + ((Element)nodeList).getAttribute("id") + " and name: "+ ((Element)nodeList).getAttribute("name"));
+        }
 
         for (int i = 0; i < nodeList.getLength(); i++) {
 
