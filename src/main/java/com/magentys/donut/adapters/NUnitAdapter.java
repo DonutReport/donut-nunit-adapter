@@ -101,7 +101,7 @@ public class NUnitAdapter {
             DeferredElementImpl testCaseElem = (DeferredElementImpl) testCase;
             element.setId(testCaseElem.getAttribute("id"));
             element.setSteps(makeSteps(testCaseElem, testCaseName));
-            element.setType("unit-Test");
+            element.setType("unit-test");
 
             elements.add(element);
         }
@@ -173,8 +173,12 @@ public class NUnitAdapter {
         return getNodesByTagName(nodeList, tagName).get(0);
     }
 
-    private List<Node> getNodesByTagName(NodeList nodeList, String tagName) throws Exception {
+    List<Node> getNodesByTagName(NodeList nodeList, String tagName) throws Exception {
         List<Node> nodes = new ArrayList<>();
+
+        if(nodeList.getLength() == 0){
+            throw new Exception("There are no elements in the node with id: " + ((Element)nodeList).getAttribute("id") + " and name: "+ ((Element)nodeList).getAttribute("name"));
+        }
 
         for (int i = 0; i < nodeList.getLength(); i++) {
 
