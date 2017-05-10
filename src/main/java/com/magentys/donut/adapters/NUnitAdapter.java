@@ -94,9 +94,13 @@ public class NUnitAdapter {
         for (Node testCase : testCases) {
             com.magentys.donut.gherkin.model.Element element = new com.magentys.donut.gherkin.model.Element();
 
-            String testCaseName = getProperty(testCase, "Name", ((DeferredElementImpl) testCase).getAttribute("name"));
+            // Set the unit test description property as the test name for donut
+            String testCaseName = getProperty(testCase, "Description", ((DeferredElementImpl) testCase).getAttribute("name"));
             element.setName(testCaseName);
-            element.setDescription(getProperty(testCase, "Description", ""));
+
+            // Setting description as an empty string, as for NUnit unit tests, it's unlikely that people will need a description for unit tests. Name should be sufficient.
+            // Also, it makes more sense to use the built-in <code>Description<code> attribute in absence of a built-in <code>Name<code> attribute.
+            element.setDescription("");
             element.setLine((int) (Math.random() * 1000));
             element.setKeyword(UNIT_TEST_KEYWORD);
 

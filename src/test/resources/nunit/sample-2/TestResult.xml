@@ -40,8 +40,7 @@
                         </failure>
                         <test-case id="0-1020" name="ComparisonTests" fullname="NUnit.Framework.Tests.AssertSyntaxTests.ComparisonTests" methodname="ComparisonTests" classname="NUnit.Framework.Tests.AssertSyntaxTests" runstate="Runnable" seed="1825752900" result="Failed" start-time="2017-02-22 03:48:27Z" end-time="2017-02-22 03:48:27Z" duration="0.156705" asserts="1">
                             <properties>
-                                <property name="Name" value="Comparison" />
-                                <property name="Description" value="Lot of comparison tests" />
+                                <property name="Description" value="ComparisonName" />
                             </properties>
                             <failure>
                                 <message><![CDATA[  Expected: greater than 7

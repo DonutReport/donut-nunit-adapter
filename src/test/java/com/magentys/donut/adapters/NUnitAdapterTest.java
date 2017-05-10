@@ -74,7 +74,7 @@ public class NUnitAdapterTest {
 
         assertTrue(features.size() == 1);
         assertTrue(scenarios.size() == 2);
-        assertTrue(scenario.getName().equals("Comparison"));
+        assertTrue(scenario.getName().equals("ComparisonName"));
         assertTrue(step.getResult().getErrorMessage().contains("Error message:"));
         assertTrue(step.getResult().getStatus().equals("failed"));
     }
@@ -149,7 +149,7 @@ public class NUnitAdapterTest {
     }
 
     @Test
-    public void shouldMakeElementsWithNameAttributeAsDefaultWhenNamePropertyIsNotSpecified() throws Exception {
+    public void shouldMakeElementsWithNameAttributeAsDefaultWhenDescriptionPropertyIsNotSpecified() throws Exception {
 
         //Assumption: This testCase doesn't have properties
         Node testCase = buildTestCase();
@@ -165,14 +165,14 @@ public class NUnitAdapterTest {
     }
 
     @Test
-    public void shouldMakeElementsWithNamePropertyWhenNamePropertyIsSpecified() throws Exception {
+    public void shouldMakeElementsWithDescriptionPropertyWhenDescriptionPropertyIsSpecified() throws Exception {
 
         Node testCase = buildTestCase();
-        String nameValue = "User is hungry, so he should be offered food";
+        String descriptionValue = "User is hungry, so he should be offered food";
         Map<String, String> properties = new HashMap<String, String>() {
             {
-                put("name", "Name");
-                put("value", nameValue);
+                put("name", "Description");
+                put("value", descriptionValue);
             }
         };
 
@@ -183,7 +183,7 @@ public class NUnitAdapterTest {
 
         assert (elements.size() == 1);
         Element element = elements.get(0);
-        assert (element.getName().equals(nameValue));
+        assert (element.getName().equals(descriptionValue));
     }
 
     @Test
