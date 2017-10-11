@@ -1,5 +1,4 @@
-
-package com.magentys.donut.gherkin.model;
+package report.donut.gherkin.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -19,7 +18,7 @@ public class Result {
     private String errorMessage;
 
 
-    public Result(String status, long duration,String errorMessage) {
+    public Result(String status, long duration, String errorMessage) {
         this.status = status;
         this.duration = duration;
         this.errorMessage = errorMessage;

@@ -1,24 +1,25 @@
-package com.magentys.donut.adapters;
+package report.donut.adapters;
 
-import com.magentys.donut.gherkin.model.Element;
-import com.magentys.donut.gherkin.model.Feature;
-import com.magentys.donut.gherkin.model.Step;
 import com.sun.org.apache.xerces.internal.dom.DeferredElementImpl;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.RandomUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import report.donut.gherkin.model.Element;
+import report.donut.gherkin.model.Feature;
+import report.donut.gherkin.model.Step;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 

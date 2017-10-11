@@ -1,6 +1,5 @@
-package com.magentys.donut.adapters;
+package report.donut.adapters;
 
-import com.magentys.donut.gherkin.model.*;
 import com.sun.org.apache.xerces.internal.dom.DeferredElementImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
@@ -8,11 +7,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import report.donut.gherkin.model.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.*;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,10 +63,10 @@ public class NUnitAdapter {
     }
 
     List<Node> extractTestFixtures(Document document) throws Exception {
-        return getNodes(document, "//test-suite[@type=\"TestFixture\"]","test-suite");
+        return getNodes(document, "//test-suite[@type=\"TestFixture\"]", "test-suite");
     }
 
-    List<Node> getNodes(Document document, String xpathString,String tagName) throws Exception {
+    List<Node> getNodes(Document document, String xpathString, String tagName) throws Exception {
         XPathFactory xPathfactory = XPathFactory.newInstance();
         XPath xpath = xPathfactory.newXPath();
 
@@ -88,11 +91,11 @@ public class NUnitAdapter {
         return feature;
     }
 
-    List<com.magentys.donut.gherkin.model.Element> makeElements(List<Node> testCases) throws Exception {
-        List<com.magentys.donut.gherkin.model.Element> elements = new ArrayList<>();
+    List<report.donut.gherkin.model.Element> makeElements(List<Node> testCases) throws Exception {
+        List<report.donut.gherkin.model.Element> elements = new ArrayList<>();
 
         for (Node testCase : testCases) {
-            com.magentys.donut.gherkin.model.Element element = new com.magentys.donut.gherkin.model.Element();
+            report.donut.gherkin.model.Element element = new report.donut.gherkin.model.Element();
 
             // Set the unit test description property as the test name for donut
             String testCaseName = getProperty(testCase, "Description", ((DeferredElementImpl) testCase).getAttribute("name"));
@@ -182,8 +185,8 @@ public class NUnitAdapter {
     List<Node> getNodesByTagName(NodeList nodeList, String tagName) throws Exception {
         List<Node> nodes = new ArrayList<>();
 
-        if(nodeList.getLength() == 0){
-            throw new Exception("There are no elements in the node with id: " + ((Element)nodeList).getAttribute("id") + " and name: "+ ((Element)nodeList).getAttribute("name"));
+        if (nodeList.getLength() == 0) {
+            throw new Exception("There are no elements in the node with id: " + ((Element) nodeList).getAttribute("id") + " and name: " + ((Element) nodeList).getAttribute("name"));
         }
 
         for (int i = 0; i < nodeList.getLength(); i++) {

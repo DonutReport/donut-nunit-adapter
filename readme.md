@@ -10,7 +10,7 @@ Currently, the only option is to build the project yourself. It will be on maven
 - Execute the command `mvn clean package` to generate the jar file
 - Execute the following command to generate the JSON files:
 ```
-java -jar target/donut-nunit-adapter-1.3-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/donut-nunit-adapter-1.5.1-jar-with-dependencies.jar
 -p <path_of_nunit_xml_report>
 -o <path_of_directory_to_store_JSON_files>
 ```

@@ -1,5 +1,4 @@
-
-package com.magentys.donut.gherkin.model;
+package report.donut.gherkin.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
