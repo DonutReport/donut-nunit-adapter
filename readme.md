@@ -1,3 +1,5 @@
+![](http://donutreport.github.io/donut/img/Donut-05.png)
+
 ### Options
 
 `-p` or `--nunit-result-xml-path` is a mandatory parameter, and it should be the path of nunit result xml.<br>
@@ -25,4 +27,8 @@ else
 		 the JSON files are written in the folder `nunit-reports` in the current folder     	 
 ```
 
+## License
 
+This project is under an MIT license
+
+Powered by: [MagenTys](https://magentys.io) & [Mechanical Rock](https://www.mechanicalrock.io)
