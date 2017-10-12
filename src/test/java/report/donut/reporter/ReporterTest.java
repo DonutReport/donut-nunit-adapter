@@ -1,11 +1,11 @@
-package com.magentys.donut.reporter;
+package report.donut.reporter;
 
-import com.magentys.donut.adapters.NUnitAdapter;
-import com.magentys.donut.adapters.NUnitAdapterTest;
-import com.magentys.donut.gherkin.model.Feature;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
+import report.donut.adapters.NUnitAdapter;
+import report.donut.adapters.NUnitAdapterTest;
+import report.donut.gherkin.model.Feature;
 
 import java.io.File;
 import java.util.List;

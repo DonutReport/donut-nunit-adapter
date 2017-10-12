@@ -1,4 +1,4 @@
-package com.magentys.donut.guice;
+package report.donut.guice;
 
 import com.google.inject.Binder;
 import com.google.inject.Module;

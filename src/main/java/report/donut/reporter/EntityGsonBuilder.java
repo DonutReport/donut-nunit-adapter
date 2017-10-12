@@ -1,5 +1,4 @@
-package com.magentys.donut.reporter;
-
+package report.donut.reporter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

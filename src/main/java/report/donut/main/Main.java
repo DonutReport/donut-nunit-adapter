@@ -1,11 +1,11 @@
-package com.magentys.donut.main;
+package report.donut.main;
 
-import com.magentys.donut.adapters.NUnitAdapter;
-import com.magentys.donut.reporter.Reporter;
 import org.apache.commons.lang3.StringUtils;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
+import report.donut.adapters.NUnitAdapter;
+import report.donut.reporter.Reporter;
 
 import java.io.File;
 import java.io.IOException;

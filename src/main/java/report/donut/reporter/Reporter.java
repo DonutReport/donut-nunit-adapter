@@ -1,9 +1,9 @@
-package com.magentys.donut.reporter;
+package report.donut.reporter;
 
 import com.google.gson.Gson;
-import com.magentys.donut.gherkin.model.Feature;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import report.donut.gherkin.model.Feature;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,9 +1,9 @@
+package report.donut.gherkin.model;
 
-package com.magentys.donut.gherkin.model;
-
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Element {
 
