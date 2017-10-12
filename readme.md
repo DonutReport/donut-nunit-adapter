@@ -1,6 +1,6 @@
 ![](http://donutreport.github.io/donut/img/Donut-05.png)
 
-Donut nunit adapter is an open source adapter written for the open-source framework [donut](https://github.com/DonutReport/donut) by the teams at [MagenTys](https://magentys.io) & [Mechanical Rock](https://mechanicalrock.io) and is designed to generate gherkin jsons from the nunit xmls.
+Donut NUnit adapter is an open source adapter written for the open-source framework [donut](https://github.com/DonutReport/donut) by the teams at [MagenTys](https://magentys.io) & [Mechanical Rock](https://mechanicalrock.io) and is designed to generate gherkin jsons from the NUnit xmls.
 These gherkin jsons can be processed by donut.
 
 ### Options
